@@ -1,36 +1,40 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+ ### APP DEMO WITH SDK
+ [Github repo](https://github.com/Turbo1337GS/Chatbot-UI-with-SDK)
 
-## Getting Started
+Hello this is template web app, for my GigAI NLP models etc!
 
-First, run the development server:
+U can look to docs in (https://main.gigasoft.com.pl/m/API_DOCS) or the demo in https://main.gigasoft.com.pl/AI/AI (GigAI v1 is free in the web)
 
+ # How to install
+
+ 1. Clone this rep 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+git clone https://github.com/Turbo1337GS/ChatbotUI/
+```
+ 2. Install the dependencies with npm / yarn etc
+ ```bash
+ cd ChatbotUI
+ npm install
+ ```
+
+ 3. run dev server
+ ```bash
+ npm run dev
+ ```
+ or build and run
+```bash
+npm run build
+npm run start
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+and now u can open  http://localhost:3000/AI in your browser!
+When u want change or remove the AI in url
+go to **next.config.js** and remove the line   
+```js
+  basePath: '/AI',
+```
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+* Sory polish !
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+Docs for GigAI Model in https://main.gigasoft.com.pl/m/API_DOCS
+Demo app in https://main.gigasoft.com.pl/AI/AI
