@@ -5,8 +5,8 @@ import { ChatOptions, OcrOptions } from "./../shared/types";
 interface GigasoftOptions {
   API_KEY?: string;
 }
-//const URL: string = "https://main.gigasoft.com.pl/v2/chat/completions";
 const URL: string = "https://main.gigasoft.com.pl/v2/chat/completions";
+//const URL: string = "http://localhost:3001/api/chat";
 export class Gigasoft {
   private API_KEY: string;
 

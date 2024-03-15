@@ -1,5 +1,5 @@
 import ImageIcon from "@mui/icons-material/Image";
-import React, { FormEvent, useEffect, useState } from "react";
+import React, { FormEvent, useEffect, useRef, useState } from "react";
 
 import {
   Box,
@@ -125,7 +125,8 @@ export default function Chat() {
     localStorage.setItem("messages", JSON.stringify(messages));
     if (isLoading)
       setImages([])
-  }, [messages]);
+    
+    console.log(messages)}, [messages]);
 
   const theme = useTheme();
   const isMobile = useMediaQuery(theme.breakpoints.down("sm"));
@@ -142,11 +143,22 @@ export default function Chat() {
   };
 
 
+  const messagesEndRef = useRef<HTMLDivElement>(null);
 
+  const scrollToBottom = () => {
+    if(localStorage.getItem('autoScroll') === "true"){
+      messagesEndRef.current?.scrollIntoView({ behavior: "smooth" });
+    }
+  };
+
+  useEffect(() => {
+    scrollToBottom();
+  }, [messages]); // Effect uruchomi się ponownie, gdy messages się zmieni
 
   return (
     <ThemeProvider theme={darkTheme}>
       <CssBaseline />
+
       <Navbar
         model={model}
         setModel={setModel}
@@ -198,7 +210,6 @@ export default function Chat() {
               ) : (
                 <div>
                   <Box sx={{ m: 1, p: 1 }}>
-
                     <Avatar src={`https://main.gigasoft.com.pl/logo.png`} />
                     {/*Old detalis, working on data! Shit */}
                     {/*<Details data={data} id={m.id}></Details>*/}
@@ -236,7 +247,6 @@ export default function Chat() {
             </Box>
           ))}
         </Box>
-
         {model !== "GigAI-v1" && (
           <Dialog
             open={isImagesPopupOpen}
@@ -309,6 +319,8 @@ export default function Chat() {
           </Box>
         </Box>
       </Box>
+      <div ref={messagesEndRef} />
+
     </ThemeProvider>
   );
 }

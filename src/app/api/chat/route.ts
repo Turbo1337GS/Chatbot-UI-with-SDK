@@ -8,6 +8,17 @@ export async function POST(req: Request) {
     let model = additionalData.model;
     let images = additionalData.images;
     let apiKey = additionalData.apiKey;
+
+    if (model === "GigAI-v1")
+    {
+      apiKey = process.env.GIGAI
+    }
+    else
+    {
+      apiKey = apiKey
+    }
+console.log(apiKey)
+
     if(String(model).toLowerCase().includes('ocr'))
     {
       if(!images)
@@ -28,9 +39,7 @@ export async function POST(req: Request) {
     }
 
     if (model === "GigAI-v1") {
-      apiKey = process.env.GIGAI;
     } else {
-      apiKey = apiKey;
       if (!apiKey) {
         const error =
           "No API Key provided for the selected model! On our website, only GigAI-v1 model is completely free";

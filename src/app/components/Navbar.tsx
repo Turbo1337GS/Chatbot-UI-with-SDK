@@ -23,6 +23,7 @@ import {
   Avatar,
 } from "@mui/material";
 import MenuIcon from "@mui/icons-material/Menu";
+import SettingsPopup from "./Settings";
 const HandleToMail = () => {
   window.location.href = "https://main.gigasoft.com.pl/m/contact";
 };
@@ -117,6 +118,7 @@ const Navbar = ({
                 sx={{ marginRight: 2 }}
               />
             )}
+            <SettingsPopup />
             <Button onClick={clearMessages}>Clear Messages</Button>
             <Button onClick={HandleToMail}>Help</Button>
           </>
@@ -156,6 +158,8 @@ const Navbar = ({
                 sx={{ marginRight: 4, marginLeft:1}}
               />
             )}
+            <SettingsPopup />
+
             <Button sx={{ml:1}} onClick={HandleToMail}>Help</Button>
 
           </List>

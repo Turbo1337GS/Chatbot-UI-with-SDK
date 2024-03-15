@@ -46,12 +46,13 @@ const QueryButton: React.FC<QueryProps> = ({ Query }) => {
 
     return (
         <>
-            <mui.Button
-                sx={{ m: 1 }}
-                variant="outlined"
-                onClick={() => handleSearch('https://www.google.com/search?q=')}>
-                Click to search Google for: "{Query}"
-            </mui.Button>
+          <mui.Button
+  sx={{ m: 1, padding: '6px 12px',maxWidth:"90%",textWrap:'balance', wordBreak:'break-word' }} 
+  variant="outlined"
+  onClick={() => handleSearch('https://www.google.com/search?q=')}>
+  Click to search Google for: "{Query}"
+</mui.Button>
+
             <mui.Button
                 sx={{ m: 1 }}
                 variant="outlined"

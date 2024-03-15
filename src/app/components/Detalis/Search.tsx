@@ -15,10 +15,10 @@ const UrlTracker: React.FC<UrlTrackerProps> = ({ url }) => {
   return (
     <Box>
       {isUrlValid ? (
-        <Box sx={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
-          <Typography variant="h6">I'm analyzing</Typography>
-            <Typography>{url}</Typography>
-          <Box sx={{ display: 'flex', gap: 2, marginTop: 2, alignItems: 'center' }}>
+        <Box sx={{ display: 'flex', flexDirection: 'column', alignItems: 'center', wordWrap:'break-word'}}>
+          <Typography sx={{wordWrap:'break-word'}} variant="h6">I'm analyzing</Typography>
+            <Typography sx={{textWrap:'balance', wordBreak:'break-word'}}>{url}</Typography>
+          <Box sx={{ display: 'flex', gap: 2, marginTop: 2, alignItems: 'center', }}>
             <CircularProgress size={24} />
             <Typography>Please wait...</Typography>
           </Box>
